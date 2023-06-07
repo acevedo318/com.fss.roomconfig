@@ -83,7 +83,7 @@ namespace FSS.Settings.RoomConfig
             _deviceType = type;
             ResetRoomConfig();
 
-            clickToMove.IsMovingX = _deviceType != DeviceType.GCH;
+            //clickToMove.IsMovingX = _deviceType != DeviceType.GCH;
             OnDeviceType.Invoke();
         }
 
