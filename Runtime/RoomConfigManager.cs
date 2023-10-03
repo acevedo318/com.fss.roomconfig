@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.IO;
 using UnityEngine.Events;
+using System.ComponentModel;
 
 namespace FSS.Settings.RoomConfig
 {
@@ -96,7 +97,13 @@ namespace FSS.Settings.RoomConfig
             }
 
             var jsonString = File.ReadAllText(filePath);
-            ForesightRoomConfig = JsonConvert.DeserializeObject<ForesightRoomConfig>(jsonString);
+
+            var settings = new JsonSerializerSettings
+            {
+                Converters = new JsonConverter[] { new NumericConverter() }
+            };
+
+            ForesightRoomConfig = JsonConvert.DeserializeObject<ForesightRoomConfig>(jsonString, settings);
         }
 
         public void SaveRoomConfig()
@@ -105,7 +112,12 @@ namespace FSS.Settings.RoomConfig
             ChangeDataRoomConfig();
             try
             {
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(ForesightRoomConfig));
+                var settings = new JsonSerializerSettings
+                {
+                    Converters = new JsonConverter[] { new NumericConverter() }
+                };
+
+                File.WriteAllText(filePath, JsonConvert.SerializeObject(ForesightRoomConfig, Formatting.Indented, settings));
             }
             catch (Exception e)
             {
