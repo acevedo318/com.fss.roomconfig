@@ -115,6 +115,27 @@ namespace FSS.Settings.RoomConfig
 
         private void CorrectValues()
         {
+            float distanceValue = 0f;
+
+            switch (DeviceType)
+            {
+                case DeviceType.GC2:
+                    distanceValue = 0.4826f;
+                    break;
+                case DeviceType.GC3:
+                    distanceValue = 0.508f;
+                    break;
+                case DeviceType.GCQ:
+                    distanceValue = 0.5588f;
+                    break;
+                case DeviceType.GCH:
+                    break;
+                default:
+                    Debug.Log("Device type is not supported");
+                    break;
+            }
+
+
             var dz = Math.Abs(GcConfig.RightHandRoomOffset_m.Z) * -1;
             var dx = Math.Abs(GcConfig.RightHandRoomOffset_m.X);
             var dy = Math.Abs(GcConfig.RightHandRoomOffset_m.Y);
@@ -127,9 +148,9 @@ namespace FSS.Settings.RoomConfig
 
             //Dx Changes
             GcConfig.RightHandRoomOffset_m.X = dx;
-            GcConfig.RightTeeOffset_m.X = dx - 0.4572f;
+            GcConfig.RightTeeOffset_m.X = dx - distanceValue;
             GcConfig.LeftHandRoomOffset_m.X = -dx;
-            GcConfig.LeftTeeOffset_m.X = -(dx - 0.4572f);
+            GcConfig.LeftTeeOffset_m.X = -(dx - distanceValue);
 
             //Dy Changes
             GcConfig.RightHandRoomOffset_m.Y = dy;
