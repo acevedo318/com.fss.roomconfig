@@ -22,6 +22,8 @@ namespace FSS.Settings.RoomConfig
         private DeviceRoomConfig gCHConfig = new();
         [SerializeField]
         private DeviceRoomConfig gC3Config = new();
+        [SerializeField]
+        private DeviceRoomConfig falconConfig = new();
 
         public double MessageTransferLatency_ms { get => messageTransferLatency_ms; set => messageTransferLatency_ms = value; }
         public double ScreenWidth_m { get => screenWidth_m; set => screenWidth_m = value; }
@@ -31,6 +33,7 @@ namespace FSS.Settings.RoomConfig
         public DeviceRoomConfig GCQConfig { get => gCQConfig; set => gCQConfig = value; }
         public DeviceRoomConfig GCHConfig { get => gCHConfig; set => gCHConfig = value; }
         public DeviceRoomConfig GC3Config { get => gC3Config; set => gC3Config = value; }
+        public DeviceRoomConfig FalconConfig { get => falconConfig; set => falconConfig = value; }
 
         [Serializable]
         public class DeviceRoomConfig

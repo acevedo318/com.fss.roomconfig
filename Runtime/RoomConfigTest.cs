@@ -27,7 +27,12 @@ namespace FSS.Settings.RoomConfig
                 FindObjectOfType<RoomConfigManager>().SetDeviceType(DeviceType.GC3);
             }
 
-            if (GUI.Button(new Rect(0, 800, 200, 200), "Guardar"))
+            if (GUI.Button(new Rect(0, 800, 200, 200), "Change to Falcon"))
+            {
+                FindObjectOfType<RoomConfigManager>().SetDeviceType(DeviceType.Falcon);
+            }
+
+            if (GUI.Button(new Rect(0, 1000, 200, 200), "Guardar"))
             {
                 FindObjectOfType<RoomConfigManager>().SaveRoomConfig();
             }

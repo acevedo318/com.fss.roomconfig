@@ -69,6 +69,7 @@ namespace FSS.Settings.RoomConfig
                 DeviceType.GC3 => (ForesightRoomConfig.DeviceRoomConfig)ForesightRoomConfig.GC3Config.Clone(),
                 DeviceType.GCH => (ForesightRoomConfig.DeviceRoomConfig)ForesightRoomConfig.GCHConfig.Clone(),
                 DeviceType.GCQ => (ForesightRoomConfig.DeviceRoomConfig)ForesightRoomConfig.GCQConfig.Clone(),
+                DeviceType.Falcon => (ForesightRoomConfig.DeviceRoomConfig)ForesightRoomConfig.FalconConfig.Clone(),
                 _ => new(),
             };
 
@@ -130,6 +131,8 @@ namespace FSS.Settings.RoomConfig
                     break;
                 case DeviceType.GCH:
                     break;
+                case DeviceType.Falcon:
+                    break;
                 default:
                     Debug.Log("Device type is not supported");
                     break;
@@ -178,6 +181,9 @@ namespace FSS.Settings.RoomConfig
                     break;
                 case DeviceType.GCH:
                     ForesightRoomConfig.GCHConfig = GcConfig;
+                    break;
+                case DeviceType.Falcon:
+                    ForesightRoomConfig.FalconConfig = GcConfig;
                     break;
                 default:
                     Debug.Log("Device type is not supported");

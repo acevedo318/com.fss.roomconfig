@@ -61,7 +61,7 @@ namespace FSS.Settings.RoomConfig
             {
                 roomConfigManager.GcConfig.RightHandRoomOffset_m.Z = -Math.Abs((pointReference.position.z - device.position.z));
                 roomConfigManager.GcConfig.RightHandRoomOffset_m.X = (pointReference.position.x - device.position.x) * -1;
-                if(roomConfigManager.DeviceType != DeviceType.GCH)
+                if(roomConfigManager.DeviceType != DeviceType.GCH && roomConfigManager.DeviceType != DeviceType.Falcon)
                 {
                     device.rotation = new Quaternion(0, 0, 0, 0);
                 }
@@ -70,7 +70,7 @@ namespace FSS.Settings.RoomConfig
             {
                 roomConfigManager.GcConfig.LeftHandRoomOffset_m.Z = (pointReference.position.z - device.position.z);
                 roomConfigManager.GcConfig.LeftHandRoomOffset_m.X = (pointReference.position.x - device.position.x) * -1;
-                if (roomConfigManager.DeviceType != DeviceType.GCH)
+                if (roomConfigManager.DeviceType != DeviceType.GCH && roomConfigManager.DeviceType != DeviceType.Falcon)
                 {
                     device.rotation = new Quaternion(0, 180, 0, 0);
                 }

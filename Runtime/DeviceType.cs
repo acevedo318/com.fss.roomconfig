@@ -5,7 +5,7 @@ namespace FSS.Settings.RoomConfig
 {
     public enum DeviceType
     {
-        GC2, GC3, GCQ, GCH
+        GC2, GC3, GCQ, GCH, Falcon
     }
 }
 
