@@ -1,11 +1,12 @@
 {
 	"name": "com.fss.roomconfig",
 	"displayName": "Room Config Package",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"unity": "2021.2",
 	"author": "FSS",
 	"description": "Core Room Config for FSX Unity Games",
 	"dependencies": {
+		"com.unity.nuget.newtonsoft-json": "3.2.1"
 	},
 	"repository": {
 		"type": "git",
