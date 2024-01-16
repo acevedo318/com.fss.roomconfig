@@ -1,7 +1,7 @@
 {
 	"name": "com.fss.roomconfig",
 	"displayName": "Room Config Package",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"unity": "2021.2",
 	"author": "FSS",
 	"description": "Core Room Config for FSX Unity Games",
