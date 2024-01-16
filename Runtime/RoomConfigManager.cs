@@ -117,21 +117,27 @@ namespace FSS.Settings.RoomConfig
         private void CorrectValues()
         {
             float distanceValue = 0f;
+            double teeOffset = 0f;
 
             switch (DeviceType)
             {
                 case DeviceType.GC2:
                     distanceValue = 0.4826f;
+                    teeOffset = 0.254;
                     break;
                 case DeviceType.GC3:
                     distanceValue = 0.508f;
+                    teeOffset = 0.22219999999999995;
                     break;
                 case DeviceType.GCQ:
                     distanceValue = 0.5588f;
+                    teeOffset = 0.3555999999999999;
                     break;
                 case DeviceType.GCH:
+                    teeOffset = 1.500;
                     break;
                 case DeviceType.Falcon:
+                    teeOffset = 1.500;
                     break;
                 default:
                     Debug.Log("Device type is not supported");
@@ -146,8 +152,8 @@ namespace FSS.Settings.RoomConfig
             //Dz Changes
             GcConfig.RightHandRoomOffset_m.Z = dz;
             GcConfig.LeftHandRoomOffset_m.Z = dz;
-            GcConfig.RightTeeOffset_m.Z = dz;
-            GcConfig.LeftTeeOffset_m.Z = dz;
+            GcConfig.RightTeeOffset_m.Z = dz - teeOffset;
+            GcConfig.LeftTeeOffset_m.Z = dz - teeOffset;
 
             //Dx Changes
             GcConfig.RightHandRoomOffset_m.X = dx;
